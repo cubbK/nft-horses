@@ -44,11 +44,10 @@ async function main() {
     "https://gateway.pinata.cloud/ipfs/QmZTANcaGBNDkxjgrwYibeSzGwa4nCKKAvCRHf45tK87PV/horse3-metadata.json"
   );
 
-  const winner = await myNFT.doTheRace();
-
-  console.log("The winner is:", Number(winner));
-  const get = await myNFT.getAllNFTs();
-  console.log("GetAll", get);
+  // const winner = await myNFT.doTheRace();
+  // console.log("The winner is:", Number(winner));
+  // const get = await myNFT.getAllNFTs();
+  // console.log("GetAll", get);
 }
 
 main()

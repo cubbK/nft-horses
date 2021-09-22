@@ -25,8 +25,15 @@ export async function fetchContract() {
 }
 async function computeRaceResult() {
   const contract = await fetchContract();
-  const winner = await contract.doTheRace();
-  console.log(Number(winner));
+  await contract.doTheRace();
+  const winner = Number(await contract.getRaceResult());
+
+  // post winner to node app after a small timeout
+  setTimeout(async () => {
+    console.log(winner + 1);
+    fetch("http://localhost:3001/finishRace?winner=" + (winner + 1));
+  }, 5000);
+
   return winner;
 }
 

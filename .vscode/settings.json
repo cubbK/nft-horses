@@ -1,12 +1,30 @@
 {
   "workbench.colorCustomizations": {
-    "activityBar.background": "#5C0736",
-    "titleBar.activeBackground": "#810A4B",
-    "titleBar.activeForeground": "#FFFBFD"
+    "activityBar.background": "#5d0636",
+    "titleBar.activeBackground": "#2d031a",
+    "titleBar.activeForeground": "#e7e7e7",
+    "activityBar.activeBackground": "#5d0636",
+    "activityBar.activeBorder": "#467808",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#467808",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#2d031a",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#5d0636",
+    "titleBar.inactiveBackground": "#2d031a99",
+    "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "spellright.language": ["sv"],
-  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
+  "spellright.language": [
+    "sv"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ],
   "solidity.defaultCompiler": "localFile",
   "solidity.compileUsingRemoteVersion": "v0.8.0+commit.c7dfd78e",
-  "solidity.compileUsingLocalVersion": "/Users/dan.popa/Work/nft-horses/soljson-v0.8.0+commit.c7dfd78e.js"
+  "solidity.compileUsingLocalVersion": "/Users/dan.popa/Work/nft-horses/soljson-v0.8.0+commit.c7dfd78e.js",
+  "peacock.color": "#2d031a"
 }

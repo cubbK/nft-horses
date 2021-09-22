@@ -12,20 +12,27 @@ contract MyNFT is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
+    Counters.Counter private randNonce;
+
+    uint256 private lastRaceResult = 0;
+
     constructor() ERC721("MyNFT", "NFT") {}
 
-    function random() private view returns (uint256) {
+    function random() private returns (uint256) {
         // sha3 and now have been deprecated
-        return
-            uint256(
-                keccak256(
-                    abi.encodePacked(
-                        block.difficulty,
-                        block.timestamp,
-                        _tokenIds.current()
-                    )
+        randNonce.increment();
+        uint256 randomNumber = uint256(
+            keccak256(
+                abi.encodePacked(
+                    block.difficulty,
+                    block.timestamp,
+                    randNonce.current()
                 )
-            );
+            )
+        );
+        console.log("random number: ", randomNumber);
+        return randomNumber;
+
         // convert hash to integer
         // players is an array of entrants
     }
@@ -57,9 +64,14 @@ contract MyNFT is ERC721URIStorage, Ownable {
         return newItemId;
     }
 
-    function doTheRace() public view returns (uint256) {
-        uint256 index = random() % _tokenIds.current();
-        return index;
+    function doTheRace() public returns (uint256) {
+        lastRaceResult = random() % _tokenIds.current();
+        console.log("lastRaceResult: ", lastRaceResult);
+        return lastRaceResult;
+    }
+
+    function getRaceResult() public view returns (uint256) {
+        return lastRaceResult;
     }
 
     function getAllNFTs() public view returns (string[] memory) {
